@@ -8,14 +8,20 @@ const CONFIG = {
     // 英雄区块导航
     PROXIO_HERO_ENABLE: true, // 开启英雄区
     PROXIO_HERO_TITLE_1: 'Fans的军事基地', // 英雄区文字
-    PROXIO_HERO_TITLE_2: '取势    明道    优术    合众', // 英雄区文字
+    PROXIO_HERO_TITLE_2: '', // 英雄区文字
     // 英雄区两个按钮，如果TEXT留空则隐藏按钮
-    PROXIO_HERO_BUTTON_1_TEXT: '', // 英雄区按钮
+    PROXIO_HERO_BUTTON_1_TEXT: '取势', // 英雄区按钮
     PROXIO_HERO_BUTTON_1_URL:
         '', // 英雄区按钮
-    PROXIO_HERO_BUTTON_2_TEXT: '', // 英雄区按钮
+    PROXIO_HERO_BUTTON_2_TEXT: '明道', // 英雄区按钮
     PROXIO_HERO_BUTTON_2_URL: '', // 英雄区按钮
     PROXIO_HERO_BUTTON_2_ICON: '', // 英雄区按钮2的图标，不需要则留空
+        PROXIO_HERO_BUTTON_3_TEXT: '优术', // 英雄区按钮
+    PROXIO_HERO_BUTTON_3_URL: '', // 英雄区按钮
+    PROXIO_HERO_BUTTON_3_ICON: '', // 英雄区按钮2的图标，不需要则留空
+        PROXIO_HERO_BUTTON_4_TEXT: '合众', // 英雄区按钮
+    PROXIO_HERO_BUTTON_4_URL: '', // 英雄区按钮
+    PROXIO_HERO_BUTTON_4_ICON: '', // 英雄区按钮2的图标，不需要则留空
 
     // 英雄区配图，如需隐藏，改为空值即可 ''
     PROXIO_HERO_BANNER_IMAGE: '', // hero区背景，默认是获取Notion背景，如需另外配置图片可以填写在这里
