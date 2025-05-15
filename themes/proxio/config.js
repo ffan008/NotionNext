@@ -8,14 +8,14 @@ const CONFIG = {
     // 英雄区块导航
     PROXIO_HERO_ENABLE: true, // 开启英雄区
     PROXIO_HERO_TITLE_1: 'Fans的军事基地', // 英雄区文字
-    PROXIO_HERO_TITLE_2: '明道、优术、取势', // 英雄区文字
+    PROXIO_HERO_TITLE_2: '取势  明道  优术  合众', // 英雄区文字
     // 英雄区两个按钮，如果TEXT留空则隐藏按钮
-    PROXIO_HERO_BUTTON_1_TEXT: '开始体验', // 英雄区按钮
+    PROXIO_HERO_BUTTON_1_TEXT: '', // 英雄区按钮
     PROXIO_HERO_BUTTON_1_URL:
-        'https://docs.tangly1024.com/article/vercel-deploy-notion-next', // 英雄区按钮
-    PROXIO_HERO_BUTTON_2_TEXT: '在Github上关注', // 英雄区按钮
-    PROXIO_HERO_BUTTON_2_URL: 'https://github.com/tangly1024/NotionNext', // 英雄区按钮
-    PROXIO_HERO_BUTTON_2_ICON: '/images/starter/github.svg', // 英雄区按钮2的图标，不需要则留空
+        '', // 英雄区按钮
+    PROXIO_HERO_BUTTON_2_TEXT: '', // 英雄区按钮
+    PROXIO_HERO_BUTTON_2_URL: '', // 英雄区按钮
+    PROXIO_HERO_BUTTON_2_ICON: '', // 英雄区按钮2的图标，不需要则留空
 
     // 英雄区配图，如需隐藏，改为空值即可 ''
     PROXIO_HERO_BANNER_IMAGE: '', // hero区背景，默认是获取Notion背景，如需另外配置图片可以填写在这里
@@ -39,32 +39,32 @@ const CONFIG = {
 
     // 特性区块
     PROXIO_FEATURE_ENABLE: true, // 特性区块开关
-    PROXIO_FEATURE_TITLE: '为什么选我',
-    PROXIO_FEATURE_TEXT_1: '我能让您的项目焕发光彩',
+    PROXIO_FEATURE_TITLE: '一起学习进步',
+    PROXIO_FEATURE_TEXT_1: '找到自由 快乐的自己',
     PROXIO_FEATURE_TEXT_2:
-        '丰富的案例经验，专业的技术服务，优质的沟通效率',
+        '简单而真诚的对话 自由而温暖的活着',
 
     // 特性1
     PROXIO_FEATURE_1_ICON_CLASS: 'fa-solid fa-stopwatch', // fas图标
     PROXIO_FEATURE_1_ICON_IMG_URL: '', // 图片图标选填，默认是fas图标，如果需要图片图标可以填写图片地址，示例/avatar.png
-    PROXIO_FEATURE_1_TITLE_1: '高效工作流程',
+    PROXIO_FEATURE_1_TITLE_1: '促动高效协作',
     PROXIO_FEATURE_1_TEXT_1: '精简的设计流程确保快速交付，在紧迫的工期下仍能保证品质与细节不打折扣。',
 
     PROXIO_FEATURE_2_ICON_CLASS: 'fa-solid fa-comments',
     PROXIO_FEATURE_2_ICON_IMG_URL: '', 
-    PROXIO_FEATURE_2_TITLE_1: '协作式流程',
+    PROXIO_FEATURE_2_TITLE_1: '紧密协作流程',
     PROXIO_FEATURE_2_TEXT_1: '与你紧密合作，融合反馈意见，打造超越预期的设计',
 
     PROXIO_FEATURE_3_ICON_CLASS: 'fa-solid fa-search',
     PROXIO_FEATURE_2_ICON_IMG_URL: '',
-    PROXIO_FEATURE_3_TITLE_1: '细节把控',
+    PROXIO_FEATURE_3_TITLE_1: '把握人际关系',
     PROXIO_FEATURE_3_TEXT_1: '精益求精雕琢每个元素，确保成品精致统一，令人过目难忘',
 
     PROXIO_FEATURE_BUTTON_TEXT: '了解更多', // 按钮文字
     PROXIO_FEATURE_BUTTON_URL: 'https://github.com/tangly1024/NotionNext', // 按钮跳转
 
     // 首页生涯区块
-    PROXIO_CAREER_ENABLE: true, // 区块开关
+    PROXIO_CAREER_ENABLE: false, // 区块开关
     PROXIO_CAREER_TITLE: '生涯',
     PROXIO_CAREER_TEXT:
         '以下是我的职业生涯',
@@ -77,7 +77,7 @@ const CONFIG = {
     ],
 
     // 首页用户测评区块
-    PROXIO_TESTIMONIALS_ENABLE: true, // 测评区块开关
+    PROXIO_TESTIMONIALS_ENABLE: false, // 测评区块开关
     PROXIO_TESTIMONIALS_TITLE: '用户反馈',
     PROXIO_TESTIMONIALS_TEXT_1: '我们的用户怎么说',
     PROXIO_TESTIMONIALS_TEXT_2:
@@ -145,7 +145,7 @@ const CONFIG = {
     ],
 
     //   FAQ 常见问题模块
-    PROXIO_FAQ_ENABLE: true, // 常见问题模块开关
+    PROXIO_FAQ_ENABLE: false, // 常见问题模块开关
     PROXIO_FAQ_TITLE: '常见问题解答',
     PROXIO_FAQ_TEXT_1: '有任何问题吗？请看这里',
     PROXIO_FAQ_TEXT_2: '我们收集了常见的用户疑问',
@@ -159,9 +159,9 @@ const CONFIG = {
     // 关于作者区块
     PROXIO_ABOUT_ENABLE: true, // 关于作者区块区块开关
     PROXIO_ABOUT_TITLE: '关于作者',
-    PROXIO_ABOUT_TEXT_1: 'I am an Architect Turned Into a Product Designer',
+    PROXIO_ABOUT_TEXT_1: '我是一个啥都会点又啥都不会的干饭人🎉',
     PROXIO_ABOUT_TEXT_2:
-        'With a background in architecture, I now apply my expertise to product design, blending aesthetics, functionality, and innovation. My goal is to create modern, user-focused designs that bring your vision to life.',
+        '这个世界太纷杂，我们会遇到各种各样的人或事，但很多时候，我们却遇不见自己。看见自己，不是定义自己。喜欢的书就去读，喜欢的旅行就出发，喜欢的美食就去吃，喜欢的人就去追。洒脱才能快乐！',
     PROXIO_ABOUT_PHOTO_URL: '/avatar.png',
     PROXIO_ABOUT_KEY_1: '经验年限',
     PROXIO_ABOUT_VAL_1: '10年+',
@@ -179,8 +179,8 @@ const CONFIG = {
     PROXIO_BRANDS_ENABLE: true, // 滚动文字
     PROXIO_BRANDS: [
         'Web Design',
-        'Logo Design',
-        'Mobile App Design',
+        'Tread',
+        'Web 3',
         'Product Design'
     ],
 
@@ -220,7 +220,7 @@ const CONFIG = {
                 },
                 {
                     title: '关于作者',
-                    href: 'https://blog.tangly1024.com/about'
+                    href: 'https://fans8.fans/about'
                 }
             ]
         }],
@@ -244,16 +244,16 @@ const CONFIG = {
     // 页面底部的行动呼吁模块
     PROXIO_CTA_ENABLE: true,
     PROXIO_CTA_TITLE: '与我建立联系',
-    PROXIO_CTA_TITLE_2: '让我们立刻启动您的项目',
+    PROXIO_CTA_TITLE_2: '让我们一起先享受这个世界',
     PROXIO_CTA_DESCRIPTION:
-        '访问NotionNext的操作文档，我们提供了详细的教程，帮助你即刻搭建站点',
-    PROXIO_CTA_BUTTON: true, // 是否显示按钮
+        '',
+    PROXIO_CTA_BUTTON: false, // 是否显示按钮
     PROXIO_CTA_BUTTON_URL:
         '/about',
     PROXIO_CTA_BUTTON_TEXT: '联系我',
 
     PROXIO_POST_REDIRECT_ENABLE: true, // 默認開啟重定向
-    PROXIO_POST_REDIRECT_URL: 'https://blog.tangly1024.com', // 重定向域名
+    PROXIO_POST_REDIRECT_URL: 'https:/fans8.fans', // 重定向域名
     PROXIO_NEWSLETTER: process.env.NEXT_PUBLIC_THEME_PROXIO_NEWSLETTER || false // 是否开启邮件订阅 请先配置mailchimp功能 https://docs.tangly1024.com/article/notion-next-mailchimp
 }
 export default CONFIG
