@@ -298,3 +298,35 @@ img {
   @keyframes l1 {
   0% {background-position: right}
 }
+
+/* Twikoo留言墙自定义样式 */
+#twikoo-message-wall .tk-comments {
+  width: 100%;
+  margin-top: 2rem;
+}
+ 
+#twikoo-message-wall .tk-comment {
+  transition: all 0.3s ease;
+}
+ 
+#twikoo-message-wall .tk-comment:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+ 
+#twikoo-message-wall .tk-avatar {
+  border-radius: 50%;
+}
+ 
+#twikoo-message-wall .tk-submit {
+  margin-top: 2rem;
+}
+ 
+#twikoo-message-wall .tk-submit textarea {
+  border-radius: 8px;
+  padding: 12px;
+}
+ 
+#twikoo-message-wall .tk-submit .tk-preview {
+  display: none;
+}
