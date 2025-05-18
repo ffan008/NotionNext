@@ -1,8 +1,0 @@
-// 留言墙配置
-export const GUESTBOOK_CONFIG = {
-  ENABLE: process.env.NEXT_PUBLIC_GUESTBOOK_ENABLE || true, // 是否启用留言墙
-  NOTION_DATABASE_ID: process.env.NEXT_PUBLIC_GUESTBOOK_DATABASE_ID || '',
-  PAGE_SIZE: process.env.NEXT_PUBLIC_GUESTBOOK_PAGE_SIZE || 12,
-  ALLOW_REPLY: process.env.NEXT_PUBLIC_GUESTBOOK_ALLOW_REPLY || true,
-  POST_LIMIT: process.env.NEXT_PUBLIC_GUESTBOOK_POST_LIMIT || 3 // 每小时留言限制
-}
