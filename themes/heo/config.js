@@ -9,7 +9,7 @@ const CONFIG = {
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   HEO_NOTICE_BAR: [
     { title: '欢迎来到我的博客', url: 'https://www.fans8.fans/about' },
-    { title: '一起探寻更多美好', url: '' }
+    { title: '一起探寻更多美好', url: 'https://www.fans8.fans/thanks' }
   ],
 
   // 英雄区左右侧组件颠倒位置
