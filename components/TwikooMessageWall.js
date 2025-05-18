@@ -34,6 +34,32 @@ export default function TwikooMessageWall() {
         comments.forEach(comment  => {
           comment.style.breakInside  = 'avoid'
           comment.style.marginBottom  = '1em'
+          comment.style.backgroundColor  = '#fff'
+          comment.style.borderRadius  = '8px'
+          comment.style.padding  = '1em'
+          comment.style.boxShadow  = '0 1px 3px rgba(0,0,0,0.1)'
+        })
+    
+    // 响应式调整 
+    const handleResize = () => {
+      if (window.innerWidth  < 768) {
+        container.style.columnCount  = '2'
+      } else if (window.innerWidth  < 480) {
+        container.style.columnCount  = '1'
+      } else {
+        container.style.columnCount  = '3'
+      }
+    }
+    
+    window.addEventListener('resize',  handleResize)
+    handleResize()
+    
+    // 清理事件监听器 
+    return () => {
+      window.removeEventListener('resize',  handleResize)
+    }
+  }
+}
         })
       }
     }
