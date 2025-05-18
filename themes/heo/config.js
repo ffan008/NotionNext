@@ -52,8 +52,9 @@ const CONFIG = {
   HEO_INFO_CARD_ICON1: 'fas fa-user',
   HEO_INFO_CARD_URL2: 'https://github.com/ffan008',
   HEO_INFO_CARD_ICON2: 'fab fa-github',
-  HEO_INFO_CARD_URL3: 'fans8.fans',
-  HEO_INFO_CARD_TEXT3: '了解更多',
+  HEO_INFO_CARD_URL3: 'fans8.fans/thanks',
+  HEO_INFO_CARD_TEXT3: '欢迎打赏',
+  HEO_INFO_CARD_ICON3: 'fas fa-sack-dollar',
 
   // 用户技能图标
   HEO_GROUP_ICONS: [
