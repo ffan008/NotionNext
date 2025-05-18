@@ -174,6 +174,44 @@ nav {
   @apply flex justify-center items-center;
 }
 
+//添加 CSS 样式实现瀑布流效果
+/* 仅在留言墙页面生效 */
+body.page-message .tk-comments-container {
+  column-count: 3;         /* 瀑布流列数 */
+  column-gap: 20px;        /* 列间距 */
+  padding: 20px;
+}
+
+/* 每条评论卡片样式 */
+body.page-message .tk-comment {
+  break-inside: avoid;     /* 防止断裂 */
+  background: #fffce6;     /* 柔和便签背景色 */
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+/* 悬停浮动效果 */
+body.page-message .tk-comment:hover {
+  transform: translateY(-4px);
+}
+
+//优化响应式效果，加上自适应布局代码，让手机端效果更好
+@media (max-width: 768px) {
+  body.page-message .tk-comments-container {
+    column-count: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.page-message .tk-comments-container {
+    column-count: 2;
+  }
+}
+
+
 /* Webmention style */
 .webmention-block {
   background: rgba(0, 116, 222, 0.2);
