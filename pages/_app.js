@@ -24,6 +24,24 @@ const ClerkProvider = dynamic(() =>
   import('@clerk/nextjs').then(m => m.ClerkProvider)
 )
 
+//为message页面添加瀑布流，只在留言墙页面添加样式，不影响博客其他页面。
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+
+export default function Layout({ children }) {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.pathname === '/message') {
+      document.body.classList.add('page-message')
+    } else {
+      document.body.classList.remove('page-message')
+    }
+  }, [router.pathname])
+
+  return <>{children}</>
+}
+
 /**
  * App挂载DOM 入口文件
  * @param {*} param0
