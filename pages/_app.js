@@ -1,36 +1,32 @@
-// import '@/styles/animate.css' // @see https://animate.style/
+
+// 样式导入
 import '@/styles/globals.css'
 import '@/styles/utility-patterns.css'
+import '@/styles/notion.css'
+import 'react-notion-x/src/styles.css'
 
-// core styles shared by all of react-notion-x (required)
-import '@/styles/notion.css' //  重写部分notion样式
-import 'react-notion-x/src/styles.css' // 原版的react-notion-x
-
+// 必要组件 & 配置
+import BLOG from '@/blog.config'
 import useAdjustStyle from '@/hooks/useAdjustStyle'
 import { GlobalContextProvider } from '@/lib/global'
 import { getBaseLayoutByTheme } from '@/themes/theme'
-import { useRouter } from 'next/router'
-import { useCallback, useMemo } from 'react'
-import { getQueryParam } from '../lib/utils'
-
-// 各种扩展插件 这个要阻塞引入
-import BLOG from '@/blog.config'
 import ExternalPlugins from '@/components/ExternalPlugins'
 import SEO from '@/components/SEO'
-import { zhCN } from '@clerk/localizations'
+
+import { useEffect, useCallback, useMemo } from 'react'
+import { useRouter } from 'next/router'
+import { getQueryParam } from '../lib/utils'
+
 import dynamic from 'next/dynamic'
-// import { ClerkProvider } from '@clerk/nextjs'
+import { zhCN } from '@clerk/localizations'
 const ClerkProvider = dynamic(() =>
   import('@clerk/nextjs').then(m => m.ClerkProvider)
 )
 
-//为message页面添加瀑布流，只在留言墙页面添加样式，不影响博客其他页面。
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-
-export default function Layout({ children }) {
+const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
 
+  // 为 message 页面添加 className
   useEffect(() => {
     if (router.pathname === '/message') {
       document.body.classList.add('page-message')
@@ -39,28 +35,16 @@ export default function Layout({ children }) {
     }
   }, [router.pathname])
 
-  return <>{children}</>
-}
-
-/**
- * App挂载DOM 入口文件
- * @param {*} param0
- * @returns
- */
-const MyApp = ({ Component, pageProps }) => {
-  // 一些可能出现 bug 的样式，可以统一放入该钩子进行调整
   useAdjustStyle()
 
-  const route = useRouter()
   const theme = useMemo(() => {
     return (
-      getQueryParam(route.asPath, 'theme') ||
+      getQueryParam(router.asPath, 'theme') ||
       pageProps?.NOTION_CONFIG?.THEME ||
       BLOG.THEME
     )
-  }, [route])
+  }, [router])
 
-  // 整体布局
   const GLayout = useCallback(
     props => {
       const Layout = getBaseLayoutByTheme(theme)
@@ -70,6 +54,7 @@ const MyApp = ({ Component, pageProps }) => {
   )
 
   const enableClerk = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+
   const content = (
     <GlobalContextProvider {...pageProps}>
       <GLayout {...pageProps}>
@@ -79,14 +64,11 @@ const MyApp = ({ Component, pageProps }) => {
       <ExternalPlugins {...pageProps} />
     </GlobalContextProvider>
   )
-  return (
-    <>
-      {enableClerk ? (
-        <ClerkProvider localization={zhCN}>{content}</ClerkProvider>
-      ) : (
-        content
-      )}
-    </>
+
+  return enableClerk ? (
+    <ClerkProvider localization={zhCN}>{content}</ClerkProvider>
+  ) : (
+    content
   )
 }
 
