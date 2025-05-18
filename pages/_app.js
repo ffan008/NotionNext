@@ -1,49 +1,48 @@
-// 样式导入
+// import '@/styles/animate.css' // @see https://animate.style/
 import '@/styles/globals.css'
 import '@/styles/utility-patterns.css'
-import '@/styles/notion.css'
-import 'react-notion-x/src/styles.css'
 
-// 必要组件 & 配置
-import BLOG from '@/blog.config'
+// core styles shared by all of react-notion-x (required)
+import '@/styles/notion.css' //  重写部分notion样式
+import 'react-notion-x/src/styles.css' // 原版的react-notion-x
+
 import useAdjustStyle from '@/hooks/useAdjustStyle'
 import { GlobalContextProvider } from '@/lib/global'
 import { getBaseLayoutByTheme } from '@/themes/theme'
-import ExternalPlugins from '@/components/ExternalPlugins'
-import SEO from '@/components/SEO'
-
-import { useEffect, useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
+import { useCallback, useMemo } from 'react'
 import { getQueryParam } from '../lib/utils'
 
-import dynamic from 'next/dynamic'
+// 各种扩展插件 这个要阻塞引入
+import BLOG from '@/blog.config'
+import ExternalPlugins from '@/components/ExternalPlugins'
+import SEO from '@/components/SEO'
 import { zhCN } from '@clerk/localizations'
+import dynamic from 'next/dynamic'
+// import { ClerkProvider } from '@clerk/nextjs'
 const ClerkProvider = dynamic(() =>
   import('@clerk/nextjs').then(m => m.ClerkProvider)
 )
 
+/**
+ * App挂载DOM 入口文件
+ * @param {*} param0
+ * @returns
+ */
 const MyApp = ({ Component, pageProps }) => {
-  const router = useRouter()
-
-  // 为 message 页面添加 className
-  useEffect(() => {
-    if (router.pathname === '/message') {
-      document.body.classList.add('page-message')
-    } else {
-      document.body.classList.remove('page-message')
-    }
-  }, [router.pathname])
-
+  // 一些可能出现 bug 的样式，可以统一放入该钩子进行调整
   useAdjustStyle()
 
+  const route = useRouter()
   const theme = useMemo(() => {
     return (
-      getQueryParam(router.asPath, 'theme') ||
+      getQueryParam(route.asPath, 'theme') ||
       pageProps?.NOTION_CONFIG?.THEME ||
       BLOG.THEME
     )
-  }, [router])
+  }, [route])
 
+  // 整体布局
   const GLayout = useCallback(
     props => {
       const Layout = getBaseLayoutByTheme(theme)
@@ -53,7 +52,6 @@ const MyApp = ({ Component, pageProps }) => {
   )
 
   const enableClerk = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-
   const content = (
     <GlobalContextProvider {...pageProps}>
       <GLayout {...pageProps}>
@@ -63,11 +61,14 @@ const MyApp = ({ Component, pageProps }) => {
       <ExternalPlugins {...pageProps} />
     </GlobalContextProvider>
   )
-
-  return enableClerk ? (
-    <ClerkProvider localization={zhCN}>{content}</ClerkProvider>
-  ) : (
-    content
+  return (
+    <>
+      {enableClerk ? (
+        <ClerkProvider localization={zhCN}>{content}</ClerkProvider>
+      ) : (
+        content
+      )}
+    </>
   )
 }
 
