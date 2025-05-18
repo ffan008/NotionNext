@@ -2,6 +2,7 @@ import { useGlobal } from '@/lib/global'
 import React from 'react'
 import Head from 'next/head'
 import Layout from '@/components/Layout'
+import TwikooMessageWall from '@/components/TwikooMessageWall'
  
 export default function MessageWall() {
   const { locale } = useGlobal()
