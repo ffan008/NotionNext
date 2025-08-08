@@ -1,9 +1,9 @@
 const CONFIG = {
 
   SIMPLE_LOGO_IMG: '/Logo.webp',
-  SIMPLE_TOP_BAR: true, // 显示顶栏
+  SIMPLE_TOP_BAR: false, // 显示顶栏
   SIMPLE_TOP_BAR_CONTENT: process.env.NEXT_PUBLIC_THEME_SIMPLE_TOP_TIPS || '',
-  SIMPLE_LOGO_DESCRIPTION: process.env.NEXT_PUBLIC_THEME_SIMPLE_LOGO_DESCRIPTION || '<div>生活爱好者<br/>/数字化从业者<br/>/知识分享博主</div>',
+  SIMPLE_LOGO_DESCRIPTION: process.env.NEXT_PUBLIC_THEME_SIMPLE_LOGO_DESCRIPTION || '<div>Work Less. Earn More. Enjoy Life.<br/>/简其事，裕其财，悦其生。</div>',
 
   SIMPLE_AUTHOR_LINK: process.env.NEXT_PUBLIC_AUTHOR_LINK || '#',
 
