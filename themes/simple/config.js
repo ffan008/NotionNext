@@ -14,9 +14,9 @@ const CONFIG = {
   SIMPLE_ARTICLE_RECOMMEND_POSTS: process.env.NEXT_PUBLIC_SIMPLE_ARTICLE_RECOMMEND_POSTS || true, // 文章详情底部显示推荐
 
   // 菜单配置
-  SIMPLE_MENU_CATEGORY: true, // 显示分类
-  SIMPLE_MENU_TAG: true, // 显示标签
-  SIMPLE_MENU_ARCHIVE: true, // 显示归档
-  SIMPLE_MENU_SEARCH: true // 显示搜索
+  SIMPLE_MENU_CATEGORY: false, // 显示分类
+  SIMPLE_MENU_TAG: false, // 显示标签
+  SIMPLE_MENU_ARCHIVE: false, // 显示归档
+  SIMPLE_MENU_SEARCH: false // 显示搜索
 }
 export default CONFIG
